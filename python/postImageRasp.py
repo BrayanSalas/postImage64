@@ -12,7 +12,7 @@ with picamera.PiCamera() as picam:
 	picam.close()
 	time.sleep(5)
 
-    with open(ruta, "rb") as f:
-        data = f.read()
-        imagenCodificada = data.encode("base64")
-        firebase.patch('/imagenes/', {'foto': imagenCodificada})
+with open(ruta, "rb") as f:
+    data = f.read()
+    imagenCodificada = data.encode("base64")
+    firebase.patch('/imagenes/', {'foto': imagenCodificada})
